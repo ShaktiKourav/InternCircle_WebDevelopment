@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A mini online store with a dynamic product catalog and interactive shopping cart.">
+  <title>Cartly — Everyday essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Cartly home"><span class="brand-mark">c</span> cartly<span class="brand-period">.</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#why-us">Why Cartly</a></nav>
+      <button class="header-cart" id="cart-jump" type="button" aria-label="Go to shopping cart">
+        <span aria-hidden="true">♧</span> Cart <span class="cart-count" id="header-cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> THE LITTLE THINGS, BETTER</p>
+          <h1>Good finds.<br><span>Great everyday.</span></h1>
+          <p>Thoughtful essentials for your desk, your day, and everywhere in between.</p>
+          <a href="#shop" class="hero-link">Explore the collection <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-art" aria-label="Decorative product collection">
+          <div class="art-circle"></div>
+          <div class="art-card art-card-one"><span>✦</span><b>MAKE<br>ROOM FOR<br>GOOD THINGS</b></div>
+          <div class="art-card art-card-two"><span>✿</span><small>little joys<br>every day</small></div>
+          <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-section content-width" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">CURATED FOR YOU</p><h2>Shop the collection</h2><p class="section-subtitle">Useful things. Lovely details. Zero fuss.</p></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search products</span><input id="product-search" type="search" placeholder="Find something..." autocomplete="off"></label>
+      </div>
+      <div class="category-row" id="category-filters" aria-label="Filter products">
+        <button class="filter-chip active" type="button" data-category="All">All items</button>
+        <button class="filter-chip" type="button" data-category="Desk">Desk</button>
+        <button class="filter-chip" type="button" data-category="Lifestyle">Lifestyle</button>
+        <button class="filter-chip" type="button" data-category="Accessories">Accessories</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="empty-products" id="empty-products" hidden>No products match your search. Try another word.</p>
+    </section>
+
+    <section class="cart-section content-width" id="cart-section">
+      <div class="cart-heading"><div><p class="eyebrow">YOUR PICKS</p><h2>Your shopping bag <span class="heading-count" id="cart-heading-count">0 items</span></h2></div><button class="text-button" id="clear-cart" type="button">Clear bag</button></div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cart-items" aria-live="polite"></div>
+        <aside class="summary-card">
+          <h3>Order summary</h3>
+          <div class="summary-row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+          <div class="summary-row"><span>Delivery</span><strong id="delivery">$0.00</strong></div>
+          <p class="delivery-hint" id="delivery-hint">Add items to see delivery.</p>
+          <div class="summary-total"><span>Total</span><strong id="grand-total">$0.00</strong></div>
+          <button class="checkout-button" id="checkout-button" type="button" disabled>Preview checkout <span aria-hidden="true">→</span></button>
+          <p class="secure-note">♡ Demo checkout · No payment details required</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="why-section" id="why-us"><div class="content-width why-inner"><div><span class="why-icon">✦</span><h2>Small details.<br>Better days.</h2></div><p>Cartly is a demo shop made to show how a simple online store works — from browsing products to reviewing your bag. Find your favorites, adjust your quantities, and preview your order.</p></div></section>
+  </main>
+
+  <footer class="footer content-width"><a class="brand" href="#"><span class="brand-mark">c</span> cartly<span class="brand-period">.</span></a><span>© 2026 Cartly · A practice storefront</span><span>Made with care <b>✦</b></span></footer>
+
+  <div class="modal-backdrop" id="checkout-modal" hidden>
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close checkout preview">×</button>
+      <div class="modal-success">✓</div>
+      <p class="eyebrow">JUST ONE LAST LOOK</p>
+      <h2 id="modal-title">Your order preview</h2>
+      <p class="modal-description">Everything looks good! This is a demo preview — no order will be placed and no payment will be collected.</p>
+      <div class="modal-items" id="modal-items"></div>
+      <div class="modal-total"><span>Estimated total</span><strong id="modal-total">$0.00</strong></div>
+      <button class="done-button" id="done-button" type="button">Looks good</button>
+      <p class="demo-disclaimer">Demo only · No card details or personal payment information requested.</p>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
