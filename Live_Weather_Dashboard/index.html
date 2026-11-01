@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search a city to see live weather conditions and a five-day forecast.">
+  <title>SkyCast — Live Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-icon">☼</span> skycast</a>
+      <div class="live-indicator"><span></span> LIVE WEATHER</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR WEATHER, BEAUTIFULLY SIMPLE</p>
+      <h1>Forecasts for <span>everywhere.</span></h1>
+      <p class="hero-copy">A little sunshine in your day starts with knowing what’s ahead.</p>
+
+      <form class="search-form" id="search-form" novalidate>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <label class="sr-only" for="city-input">Search city</label>
+        <input id="city-input" type="search" placeholder="Search for a city..." autocomplete="off" maxlength="80">
+        <button id="search-button" type="submit">Search <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="search-hint" id="search-hint">Try “London”, “Tokyo” or “New Delhi”.</p>
+    </section>
+
+    <section class="status-panel" id="status-panel" aria-live="polite" aria-atomic="true">
+      <div class="status-icon">☁</div>
+      <div>
+        <strong id="status-title">Ready when you are</strong>
+        <p id="status-message">Search for a city to see its current weather and five-day forecast.</p>
+      </div>
+    </section>
+
+    <section class="weather-content" id="weather-content" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">CURRENT CONDITIONS</p>
+          <h2 id="location-name">—</h2>
+          <p class="updated" id="local-time">Local time · —</p>
+        </div>
+        <div class="condition-pill"><span class="condition-dot"></span> Now</div>
+      </div>
+
+      <article class="current-card">
+        <div class="current-main">
+          <div class="weather-symbol" id="current-icon" aria-hidden="true">☀️</div>
+          <div>
+            <div class="temperature"><span id="current-temp">—</span><span class="degree">°</span></div>
+            <p class="condition-text" id="current-description">—</p>
+            <p class="feels-like">Feels like <strong id="feels-like">—</strong>°</p>
+          </div>
+        </div>
+        <div class="current-summary">
+          <p>Here's what's happening in your city right now.</p>
+          <div class="summary-divider"></div>
+          <span id="day-summary">Live conditions</span>
+        </div>
+      </article>
+
+      <div class="details-grid">
+        <article class="detail-card"><span class="detail-icon">💧</span><span class="detail-label">Humidity</span><strong><span id="humidity">—</span><small>%</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">🌬️</span><span class="detail-label">Wind speed</span><strong><span id="wind-speed">—</span><small> km/h</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">🌡️</span><span class="detail-label">Pressure</span><strong><span id="pressure">—</span><small> hPa</small></strong></article>
+        <article class="detail-card"><span class="detail-icon">☀️</span><span class="detail-label">UV index</span><strong><span id="uv-index">—</span><small></small></strong></article>
+      </div>
+
+      <section class="forecast-section">
+        <div class="forecast-heading">
+          <div><p class="section-kicker">PLAN AHEAD</p><h2>5-day forecast</h2></div>
+          <span class="forecast-caption">Daily outlook</span>
+        </div>
+        <div class="forecast-grid" id="forecast-grid"></div>
+      </section>
+      <p class="data-credit">Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>
+    </section>
+
+    <footer class="footer"><span>© 2026 SkyCast</span><span>Made for curious skies <b>✦</b></span></footer>
+  </main>
+</body>
+</html>
