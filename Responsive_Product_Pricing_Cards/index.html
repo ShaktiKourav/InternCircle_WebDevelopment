@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive SaaS pricing section with monthly and yearly billing.">
+  <title>Planly — Simple, transparent pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Planly home"><span class="brand-mark">P</span> planly</a>
+      <a class="top-link" href="#plans">Explore plans <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <section class="pricing-section" id="plans" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> PRICING THAT SCALES WITH YOU</p>
+        <h1 id="page-title">Simple plans. <span>Big possibilities.</span></h1>
+        <p class="subtitle">Everything you need to do your best work. Start free, then grow at your own pace.</p>
+
+        <div class="billing-area">
+          <span class="billing-label" id="monthly-label">Monthly</span>
+          <button class="billing-switch" id="billing-toggle" type="button" role="switch"
+                  aria-checked="false" aria-label="Switch to yearly billing">
+            <span class="switch-knob"></span>
+          </button>
+          <span class="billing-label" id="yearly-label">Yearly</span>
+          <span class="save-pill">SAVE 20%</span>
+        </div>
+        <p class="billing-note" id="billing-note" aria-live="polite">Billed monthly. Change anytime.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card" data-plan="starter">
+          <div class="card-top">
+            <div class="plan-icon starter-icon" aria-hidden="true">✦</div>
+            <h2>Starter</h2>
+            <p class="plan-description">For individuals getting started with their ideas.</p>
+            <div class="price-line">
+              <span class="currency">$</span><span class="price" data-monthly="0" data-yearly="0">0</span>
+              <span class="period">/ month</span>
+            </div>
+            <p class="billing-detail" data-monthly-label="Free forever" data-yearly-label="Free forever">Free forever</p>
+            <a class="cta secondary-cta" href="mailto:hello@example.com?subject=Starter%20Plan">Get started <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="feature-divider"></div>
+          <p class="feature-heading">WHAT'S INCLUDED</p>
+          <ul class="features">
+            <li><span class="check">✓</span> Up to 3 projects</li>
+            <li><span class="check">✓</span> Basic analytics</li>
+            <li><span class="check">✓</span> 1 GB secure storage</li>
+            <li><span class="check">✓</span> Community support</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card popular-card" data-plan="pro">
+          <div class="ribbon popular-ribbon">MOST POPULAR</div>
+          <div class="card-top">
+            <div class="plan-icon pro-icon" aria-hidden="true">✧</div>
+            <h2>Pro</h2>
+            <p class="plan-description">For growing teams ready to do more, together.</p>
+            <div class="price-line">
+              <span class="currency">$</span><span class="price" data-monthly="19" data-yearly="15">19</span>
+              <span class="period">/ month</span>
+            </div>
+            <p class="billing-detail" data-monthly-label="Billed monthly" data-yearly-label="$180 billed yearly">Billed monthly</p>
+            <a class="cta primary-cta" href="mailto:hello@example.com?subject=Pro%20Plan">Choose Pro <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="feature-divider"></div>
+          <p class="feature-heading">EVERYTHING IN STARTER, PLUS</p>
+          <ul class="features">
+            <li><span class="check">✓</span> Unlimited projects</li>
+            <li><span class="check">✓</span> Advanced analytics</li>
+            <li><span class="check">✓</span> 100 GB secure storage</li>
+            <li><span class="check">✓</span> Priority email support</li>
+            <li><span class="check">✓</span> Team collaboration</li>
+          </ul>
+        </article>
+
+        <article class="pricing-card" data-plan="business">
+          <div class="ribbon value-ribbon">BEST VALUE</div>
+          <div class="card-top">
+            <div class="plan-icon business-icon" aria-hidden="true">⌘</div>
+            <h2>Business</h2>
+            <p class="plan-description">For established teams that need more control.</p>
+            <div class="price-line">
+              <span class="currency">$</span><span class="price" data-monthly="39" data-yearly="31">39</span>
+              <span class="period">/ month</span>
+            </div>
+            <p class="billing-detail" data-monthly-label="Billed monthly" data-yearly-label="$372 billed yearly">Billed monthly</p>
+            <a class="cta secondary-cta" href="mailto:hello@example.com?subject=Business%20Plan">Contact sales <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="feature-divider"></div>
+          <p class="feature-heading">EVERYTHING IN PRO, PLUS</p>
+          <ul class="features">
+            <li><span class="check">✓</span> Unlimited team members</li>
+            <li><span class="check">✓</span> 1 TB secure storage</li>
+            <li><span class="check">✓</span> Advanced permissions</li>
+            <li><span class="check">✓</span> Dedicated support</li>
+            <li><span class="check">✓</span> Custom workflows</li>
+          </ul>
+        </article>
+      </div>
+      <p class="bottom-note">All plans include secure cloud hosting and regular product updates.</p>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 Planly. Made for your next big idea.</span>
+      <span>Questions? <a href="mailto:hello@example.com">Get in touch</a></span>
+    </footer>
+  </main>
+</body>
+</html>
